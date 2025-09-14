@@ -170,8 +170,6 @@ pciutils
 pcmciautils
 picom
 pipewire-audio
-#plymouth
-#plymouth-themes
 pnmixer
 polkitd
 powermgmt-base
