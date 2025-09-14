@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Lilidog Theme Options
+Exec=ld-theme-changer
+StartupNotify=false
+Terminal=false
+Icon=applications-graphics
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
