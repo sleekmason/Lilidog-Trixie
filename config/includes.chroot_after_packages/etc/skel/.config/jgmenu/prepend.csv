@@ -96,7 +96,7 @@ Grub Backgrounds,         thunar ~/Pictures/grub-bg,                     folder-
 Openbox,             obconf,                                                               obconf
 Quick Themes,        ld-theme-changer,                                                     preferences-desktop-theme
 System Settings,     xfce4-settings-manager,                                               org.xfce.settings.manager
-Power Manager,       xfce4-power-manager-settings,                                         org.xfce.powermanager
+Power Manager,       mate-power-preferences,                                               mate-power-manager
 Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
 Tint2 Settings,      tint2conf,                                                            tint2conf
 Keybinds,            geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
