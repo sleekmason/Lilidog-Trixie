@@ -80,6 +80,7 @@ gtk2-engines-pixbuf
 gvfs
 gvfs-backends
 gvfs-fuse
+gxkb
 hardinfo
 hdparm
 htop
@@ -123,17 +124,16 @@ libreoffice-writer
 librsvg2-common
 lightdm
 lightdm-gtk-greeter-settings
-live-task-localisation
 lm-sensors
 locales
 lsb-release
 luckybackup
-#lxpolkit
-mate-polkit
 lxrandr
 lxtask
 mailcap
 manpages
+mate-polkit
+mate-power-manager
 meld
 menu
 menu-xdg
@@ -171,7 +171,6 @@ pcmciautils
 picom
 pipewire-audio
 pnmixer
-polkitd
 powermgmt-base
 pragha
 python3-distro
@@ -284,4 +283,3 @@ xz-utils
 yad
 yt-dlp
 zstd
-mate-power-manager
