@@ -60,6 +60,7 @@ Synaptic,           gksudo synaptic,                  synaptic
 Install Extras,     ld-installers,                    preferences-system-search
 
 ^tag(toggles)
+GXKB,                toggle.gxkb,                                   org.xfce.settings.manager
 Conky,               conky-toggle,                                  org.xfce.settings.manager
 Gammy,               toggle.gammy,                                  org.xfce.settings.manager
 Jgmenu,              jg-icon-changer,                               org.xfce.settings.manager
