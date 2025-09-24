@@ -101,7 +101,7 @@ _add_backports() {
 _upgrade_kernel() {
       _msg="Install backports kernel? (Also adds repositories)"
       do_it() { echo 'deb http://deb.debian.org/debian trixie-backports main' | tee /etc/apt/sources.list.d/trixie-backports.list &&
-		        apt-get update && apt-get install -y -t trixie-backports linux-image-amd64/trixie-backports linux-headers-amd64/trixie-backports firmware-linux ;}
+		        apt-get update && apt-get install -y -t trixie-backports linux-image-amd64/trixie-backports linux-headers-amd64/trixie-backports libc6-dev firmware-linux ;}
         see_it
         no_see
         run_it
@@ -210,7 +210,7 @@ _remove_packages
 _add_backports
 _upgrade_kernel
 _add_slick
-_sourcechanger
+#_sourcechanger
 _osprober
 _firmware
 #_autologin
@@ -225,7 +225,7 @@ _remove_packages
 _add_backports
 _upgrade_kernel
 _add_slick
-_sourcechanger
+#_sourcechanger
 _firmware
 #_autologin
 _reboot
