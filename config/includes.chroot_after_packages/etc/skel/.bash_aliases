@@ -1,2 +1,3 @@
 alias welcome="sudo /usr/local/bin/ld-entry -i"
 alias batterysaver="sudo tlp start"
+alias colors="colortest -w -r -s"
