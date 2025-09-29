@@ -81,6 +81,15 @@ _update() {
 	run_it
 }
 
+-apt_location() {
+	  _msg="Update sources style to the new deb822 format? (If wanting to use the mirror changer script later, choose no.)"
+      do_it() { apt modernize-sources -y
+	  apt update ;}
+        see_it
+        no_see
+        run_it
+}
+
 _remove_packages() {
       _msg="Remove Cryptsetup and related packages?"
       do_it() { apt-get remove -y cryptsetup cryptsetup-initramfs cryptsetup-bin ;}
@@ -206,6 +215,7 @@ _reboot() {
 
 if grep -q "#GRUB_DISABLE_OS_PROBER=false" "/etc/default/grub"; then
 _update
+-apt_location
 _remove_packages
 _add_backports
 _upgrade_kernel
@@ -221,6 +231,7 @@ sed -i '/vmrestore.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
 fi
 else
 _update
+-apt_location
 _remove_packages
 _add_backports
 _upgrade_kernel
