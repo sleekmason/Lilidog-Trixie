@@ -72,6 +72,7 @@ Tint2 Options,       tint2-options,                                 org.xfce.set
 Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
 Transparency,        transparency-system,                           org.xfce.settings.manager
 Tint2 Toggle,        toggle.tint2,                                  org.xfce.settings.manager
+Sexy Bash,           toggle.sexy,                                   org.xfce.settings.manager
 OSprober,            osprober-toggle,                               org.xfce.settings.manager
 Sounds,              notification-sounds,                           org.xfce.settings.manager
 Picom,               toggle.picom,                                  org.xfce.settings.manager
