@@ -15,8 +15,8 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Fane"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Teal"
 
 ## Picom transparency
-if ! pgrep -x picom > /dev/null 2>&1; then
-picom --daemon &
+if pgrep -x picom > /dev/null 2>&1; then
+pkill -x picom
 fi
 sed -i 's/^active-opacity =.*/active-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^frame-opacity =.*/frame-opacity = 1.0;/g' "$HOME/.config/picom.conf"
@@ -51,7 +51,7 @@ sed -i "s/editor_font=.*/editor_font=JetBrains Mono 11/g" ~/.config/geany/geany.
 if test -e ~/.config/jgmenu/backup; then
 rm -fr ~/.config/jgmenu/backup
 fi
-jgmenu_run init --apply-obtheme
+jgmenu_run init --apply-obtheme >/dev/null 2>&1 &
 #jgmenu_run gtktheme
 
 ## jgmenu font
@@ -118,11 +118,10 @@ killall -q dunst
 
 ### Conky
 ## default text color
-killall conky
+killall -q conky
 OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/scripts/defaults.txt" | cut -d'#' -f2 | sed 's/..$//')
 sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME"/.config/conky/*.conf >/dev/null 2>&1 &
 sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME/.config/conky/scripts/defaults.txt" >/dev/null 2>&1 &
-killall -q conky
 if test -f "$HOME"/.config/conky/conky-shortcuts.conf; then
 set -m; conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &> /dev/null
 fi
