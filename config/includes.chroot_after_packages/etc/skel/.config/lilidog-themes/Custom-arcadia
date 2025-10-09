@@ -24,7 +24,7 @@ if test -e ~/.config/jgmenu/backup; then
 rm -fr ~/.config/jgmenu/backup
 fi
 #jgmenu_run gtktheme
-jgmenu_run init --apply-obtheme
+jgmenu_run init --apply-obtheme >/dev/null 2>&1
 
 ## Change xfce4-terminal theme
 #xfce4-term-colors arcadia
