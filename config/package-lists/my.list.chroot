@@ -27,6 +27,7 @@ dbus-broker
 dbus-bin
 dbus-user-session
 dbus-x11
+dconf-editor
 dconf-gsettings-backend
 desktop-base
 dialog
