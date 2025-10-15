@@ -47,7 +47,7 @@ f2fs-tools
 fastfetch
 feh
 file
-file-roller
+#file-roller
 firefox-esr
 fonts-dancingscript
 fonts-dejavu-core
@@ -217,8 +217,6 @@ thunar-media-tags-plugin
 thunar-volman
 tumbler
 traceroute
-transmission
-transmission-gtk
 tree
 udev
 unzip
@@ -287,3 +285,5 @@ xz-utils
 yad
 yt-dlp
 zstd
+qbittorrent
+xarchiver
