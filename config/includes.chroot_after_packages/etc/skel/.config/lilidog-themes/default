@@ -135,6 +135,9 @@ fi
 ## default text color
 if [[ $(command -v conky) ]]; then
 killall -q conky
+    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$HOME"/.config/conky/*.conf
+    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$HOME"/.config/conky/*.conf
+    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
 OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/scripts/defaults.txt" | cut -d'#' -f2 | sed 's/..$//')
 sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME"/.config/conky/*.conf >/dev/null 2>&1 &
 sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME/.config/conky/scripts/defaults.txt" >/dev/null 2>&1 &
