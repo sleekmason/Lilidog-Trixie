@@ -12,11 +12,12 @@
     located in the tint2 panel. Font size, themes
     wallpapers, and other options are available.
 
-    To install Lilidog, click on the green button 
-    in the tray. Or try Menu --> All Programs -->
-    System --> Install Lilidog. The passwords are  
-    'user' for username, and 'live' for root.
+    The live environment passwords are 'user' for 
+    username, and 'live' for root.
+
+    To install Lilidog, reboot the iso and choose 
+    'Start installer'.
     
-    The debian installer is also an option should
-    you prefer. Reboot to access the menu.
-    
+    After installation, use the welcome script to
+    see other initial setup options. You can also
+    type 'welcome' in a terminal for use later.
