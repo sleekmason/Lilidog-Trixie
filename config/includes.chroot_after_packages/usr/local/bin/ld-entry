@@ -143,8 +143,9 @@ _add_slick() {
 }
 
 _sourcechanger() {
-      _msg="Use netselect to find a faster debian mirror? Will take a few minutes."
-      do_it() { apt install -y netselect-apt
+      _msg="Use Netselect to find a faster debian mirror? Will take a few minutes..."
+      do_it() { if ! test -e "/etc/apt/sources.list.d/debian.sources"; then
+		  apt install -y netselect-apt
 		        rm -rf /tmp/sourcechanger
 		        mkdir /tmp/sourcechanger
 		          if [ ! -e "/etc/apt/sources.list-original.bak" ]; then
@@ -166,7 +167,7 @@ _sourcechanger() {
                   fi
                   if apt-get update -eany; then
                      echo
-                     echo "   [0;32mSuccess! Enjoy your new debian mirror.[0m"
+                     echo "   [0;32mSuccess! Enjoy your new mirror sources.[0m"
                      echo
                   else
                      echo
@@ -175,6 +176,9 @@ _sourcechanger() {
                      sleep 2
                      cp -f "/etc/apt/sources.list-original.bak" "/etc/apt/sources.list"
                      apt update
+                  fi 
+                  else
+                     echo "   [0;31mDefault /etc/apt/sources.list not found. Exiting.[0m"
                   fi ;}
         see_it
         no_see
