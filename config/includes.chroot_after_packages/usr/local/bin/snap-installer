@@ -9,8 +9,8 @@ read -p "   [0;33mSnap Installer[0m
    connection as snap searches for resources. About 7 minutes on
    a fairly decent connection here.
    
-   [0;33mLogging out and back in will be necessary for installed 
-   items to be called from menu entries without the full path.[0m
+   [0;33mLogging out and back in will be necessary for installed items
+   to be called from menu entries without the full path.[0m
 
    [0;34mhttps://snapcraft.io//[0m
    
@@ -63,7 +63,7 @@ echo ""
 echo "---------------------------------------------------------------"
 else
 echo "" 
-echo "[0;32mPlease install Lilidog to use Snap. Exiting...[0m"
+echo "[0;32mPlease install Beardog to use Snap. Exiting...[0m"
 echo ""
 fi
 else
