@@ -21,16 +21,18 @@ while getopts 'iq' OPTION; do
       i)
 	_interactive="yes"
 	echo ""
-	echo -e " [0;32m----------------------------------------------------------[0m"
+	echo -e "                   [0;32mWELCOME TO LILIDOG![0m"
+	echo ""
+	echo -e " [0;32m--------------------------------------------------------[0m"
 	echo ""
 	echo -e " [0;32mEntering the interactive script for customizing Lilidog.[0m"
 	echo ""
 	echo ""
 	echo -e " [0;33mPlease use the letters 'y' or 'n' for choice selections.\n[0m"
-	echo -e " [0;32mThese choices can also be found in the Lilidog Installers.[0m"
-    echo -e " [0;32mAll items listed can be performed later if you would like.[0m"
+	echo -e " [0;32mThese items can also be found in the Lilidog Installers,[0m"
+    echo -e " [0;32mso any of these options can be added at a later time.[0m"
     echo ""
-	echo -e " [0;32m----------------------------------------------------------[0m"
+	echo -e " [0;32m--------------------------------------------------------[0m"
 	echo ""
 	break
       ;;
@@ -86,7 +88,7 @@ _update() {
 }
 
 -apt_location() {
-	  _msg="Update sources style to the new deb822 format? (If wanting to use the mirror changer script later, choose no.)"
+	  _msg="Update sources style to the new deb822 format?"
       do_it() { apt modernize-sources -y
 	  apt update ;}
         see_it
@@ -141,7 +143,7 @@ _add_slick() {
 }
 
 _sourcechanger() {
-      _msg="Use netselect-apt to find a faster debian mirror? This can take a few minutes..."
+      _msg="Use netselect to find a faster debian mirror? Will take a few minutes."
       do_it() { apt install -y netselect-apt
 		        rm -rf /tmp/sourcechanger
 		        mkdir /tmp/sourcechanger
