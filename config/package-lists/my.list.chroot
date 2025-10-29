@@ -14,6 +14,7 @@ brightnessctl
 brightness-udev
 btrfs-progs
 bzip2
+7zip
 ca-certificates
 catfish
 conky-all
@@ -185,6 +186,7 @@ python3-six
 python3-pycurl 
 python3-reportbug
 python3-xlib
+qbittorrent
 #qt5ct
 #qt5-gtk-platformtheme
 #qt6-gtk-platformtheme
@@ -244,6 +246,7 @@ x11-session-utils
 x11-utils
 x11-xkb-utils
 x11-xserver-utils
+xarchiver
 xbitmaps
 xclip
 xcvt
@@ -285,5 +288,3 @@ xz-utils
 yad
 yt-dlp
 zstd
-qbittorrent
-xarchiver

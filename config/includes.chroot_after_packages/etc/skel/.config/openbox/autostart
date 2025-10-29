@@ -38,6 +38,7 @@ mate-power-manager >/dev/null 2>&1 &
 xfsettingsd --daemon &
 pnmixer &
 sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
+/usr/libexec/polkit-mate-authentication-agent-1 &
 
 ## Start conkys on login if present
 if test -f  "$HOME/.config/conky/scripts/conky-restart-list"; then
