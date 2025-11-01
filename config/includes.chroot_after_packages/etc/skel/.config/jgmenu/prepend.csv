@@ -45,7 +45,7 @@ HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-insta
 Qbittorrent,        qbittorrent,                      qbittorrent
 Font Viewer,        yad --font,                       preferences-desktop-font
 Color Chooser,      yad --color --gtk-palette --palette=/usr/share/X11/rgb.txt,                     org.xfce.settings.color
-Kernel Remover,     x-terminal-emulator -T 'Kernel Remover' -e 'sudo kernel-remover -G dialog',     applications-accessories
+Kernel Remover,     gksudo /usr/local/bin/kernel-remover,     applications-accessories
 Check Firmware,     x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Wallpaper Maker,    wallpaper-maker,                  applications-graphics
 Upgrade Options,    update-options,                   system-software-update
