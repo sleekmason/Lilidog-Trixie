@@ -46,7 +46,10 @@ while IFS= read -r line; do
     update_transparency "$conf"
 done < <(tail -n +2 "$conkyfile")  # Skip shebang
 
-# Restart
-"$conkyfile"
+# Restart conkys one by one
+tail -n +2 "$conkyfile" | while IFS= read -r line; do
+    eval "$line" &
+    sleep 0.3
+done
 
 exit 0
