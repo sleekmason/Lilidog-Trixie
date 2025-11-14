@@ -42,7 +42,7 @@ sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
 
 ## Start conkys on login if present
 if test -f  "$HOME/.config/conky/scripts/conky-restart-list"; then
-   "$HOME/.config/conky/scripts/conky-restart-list" >/dev/null 2>&1
+   "$HOME/.config/conky/scripts/conky-restart-list" >/dev/null 2>&1 &&
    "conkyrestart" >/dev/null 2>&1
 fi
 
