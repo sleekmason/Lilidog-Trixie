@@ -53,7 +53,7 @@ fi
 ## Geany theme
 if [[ $(command -v geany) ]]; then
 sed -i "s/color_scheme=.*/color_scheme=Fane.conf/g" ~/.config/geany/geany.conf
-sed -i "s/editor_font=.*/editor_font=JetBrains Mono 11/g" ~/.config/geany/geany.conf
+sed -i "s/editor_font=.*/editor_font=JetBrains Mono Light 10/g" ~/.config/geany/geany.conf
 fi
 
 ## jgmenu theme
