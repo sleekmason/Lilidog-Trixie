@@ -225,7 +225,7 @@ _reboot() {
 
 if grep -q "#GRUB_DISABLE_OS_PROBER=false" "/etc/default/grub"; then
 _update
-_sourcechanger
+#_sourcechanger
 -apt_location
 _remove_packages
 _add_backports
@@ -241,7 +241,7 @@ sed -i '/vmrestore.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
 fi
 else
 _update
-_sourcechanger
+#_sourcechanger
 -apt_location
 _remove_packages
 _add_backports
