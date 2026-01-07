@@ -229,7 +229,7 @@ _update
 -apt_location
 _remove_packages
 _add_backports
-_upgrade_kernel
+#_upgrade_kernel
 _add_slick
 _osprober
 _firmware
@@ -245,7 +245,7 @@ _update
 -apt_location
 _remove_packages
 _add_backports
-_upgrade_kernel
+#_upgrade_kernel
 _add_slick
 _firmware
 #_autologin
