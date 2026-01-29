@@ -18,3 +18,4 @@ Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-insta
 Sowm w/ Borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer",       applications-utilities
 Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer",   applications-utilities
 Tint2 Less Icons, x-terminal-emulator -T 'Tint2 With Less Icons Installer' -e bash -c "tint2-less-installer",     applications-utilities
+Wine,             x-terminal-emulator -T 'Wine Installer' -e bash -c "wine-installer",                            applications-utilities
