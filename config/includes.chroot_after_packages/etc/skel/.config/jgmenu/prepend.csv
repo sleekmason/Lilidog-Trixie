@@ -32,7 +32,7 @@ Development,^checkout(development),applications-development
 Meld,               meld,                              document-properties
 Gpick,              gpick,                             gpick
 Geany,              geany,	                       geany
-Icon Browser,       yad-icon-browser,              applications-science
+Icon Browser,       yad-icon-browser,                  applications-science
 
 ^tag(utilities)
 Screenshot,         xfce4-screenshooter,              org.xfce.screenshooter
