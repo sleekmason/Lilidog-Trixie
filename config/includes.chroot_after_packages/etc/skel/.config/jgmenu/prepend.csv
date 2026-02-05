@@ -101,7 +101,7 @@ System Settings,     xfce4-settings-manager,                                    
 Power Manager,       mate-power-preferences,                                               mate-power-manager
 Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
 Tint2 Settings,      tint2conf,                                                            tint2conf
-Keybinds,            geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
+Keybinds,            x-terminal-emulator -T "Keybinds" -e ld-keys,                         document-properties
 Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings
 Jgmenu,              geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Urxvt,               geany ~/.Xresources,                                                  utilities-terminal
