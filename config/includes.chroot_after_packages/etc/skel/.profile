@@ -25,25 +25,6 @@ if [ -n "$ZSH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-# include sbin in PATH
-if [ -d "/sbin" ] ; then
-    PATH="${PATH:+${PATH}:}/sbin"
-fi
-
-if [ -d "/usr/sbin" ] ; then
-    PATH="${PATH:+${PATH}:}/usr/sbin"
-fi
-
 ## autostart X on successful login to tty1
 ## Uncomment the following three lines
 #if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
