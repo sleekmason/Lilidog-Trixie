@@ -61,8 +61,8 @@ declare -A FRIENDLY_NAMES=(
 )
 
 # SXHKD keybinds
-echo -e "${YELLOW}STANDARD KEYBINDS - SXHKD - (Adjust in: ~/.config/openbox/sxhkdrc-open)${RESET}"
-echo -e "${YELLOW}-----------------------------------------------------------------------${RESET}"
+echo -e " ${YELLOW}STANDARD KEYBINDS - SXHKD - (Adjust in: ~/.config/openbox/sxhkdrc-open)${RESET}"
+echo -e " ${YELLOW}-----------------------------------------------------------------------${RESET}"
 
 {
 for key in "${!FRIENDLY_NAMES[@]}"; do
