@@ -9,6 +9,9 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Make qt work for luckybackup - others
+export QT_QPA_PLATFORMTHEME=gtk2
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -23,6 +26,20 @@ if [ -n "$ZSH_VERSION" ]; then
     if [ -f "$HOME/.zshrc" ]; then
 	. "$HOME/.zshrc"
     fi
+fi
+
+# Add directories to $PATH if not added.
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+if [ -d "/sbin" ] ; then
+    PATH="${PATH:+${PATH}:}/sbin"
+fi
+if [ -d "/usr/sbin" ] ; then
+    PATH="${PATH:+${PATH}:}/usr/sbin"
 fi
 
 ## autostart X on successful login to tty1
