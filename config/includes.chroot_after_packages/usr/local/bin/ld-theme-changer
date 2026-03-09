@@ -14,6 +14,7 @@ yad --title "Theming Options" --form --center --borders=14 --buttons-layout=edge
     --field="                           Jgmenu!jgmenu":FBTN "jg-icon-changer" \
     --field="                         LightDM!lightdm-gtk-greeter-settings":FBTN "lightdm-options" \
     --field="":LBL "" \
+    --field="                Tint2 Options!tint2conf":FBTN "tint2-options" \
     --field="             Logout Themes!org.xfce.settings.default-applications":FBTN "logout-theme-chooser" \
     --field="                        Openbox!obconf":FBTN "obconf" \
     --field="                           Sounds!audio-speakers":FBTN "notification-sounds" \

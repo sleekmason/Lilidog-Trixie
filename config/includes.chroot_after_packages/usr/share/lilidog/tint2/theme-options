@@ -1,9 +1,9 @@
 Auto Themes,                ld-themes,                                org.xfce.settings.color
 Conky Options,              conky-toggle,                             preferences-desktop-display
-Notification Sounds,        notification-sounds,                      audio-x-generic
+GTK Settings,               xfce4-settings-manager,                   org.xfce.settings.manager
 Openbox Settings,           obconf,                                   obconf
-System Settings,            xfce4-settings-manager,                   org.xfce.settings.manager
-Tint2 Bar Settings,         tint2-options,                            preferences-system
+Notification Sounds,        notification-sounds,                      audio-x-generic
+Tint2 Options,              tint2-options,                            tint2conf
 Transparency,               transparency-system,                      preferences-desktop-personal
 Wallpapers,                 feh-set-wallpaper,                        preferences-desktop-wallpaper
 Update Options,             update-options,                           system-software-update
