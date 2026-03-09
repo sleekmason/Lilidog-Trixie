@@ -1,5 +1,5 @@
 Tint2 Bar Size,             tint2-iconsize,          object-flip-vertical
-Tint2 Theme,                tint2-theme-options,     applications-graphics
+Tint2 Themes,                tint2-theme-options,     applications-graphics
 Tint2 12H/24H,              tint2-12to24,            time-admin
 Tint2 Autohide,             tint2-autohide,          preferences-desktop
 Tint2 Autoshrink,           tint2-shrink,            applications-accessories
