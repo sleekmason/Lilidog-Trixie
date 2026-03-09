@@ -18,6 +18,7 @@ MAX_LINE=86
 # Use the followiing section to change the output names as desired.
 declare -A FRIENDLY_NAMES=(
 
+  ["pkill -USR1 -x sxhkd"]="Reload sxhkd"
   ["ld-keys"]="Show Keybinds"
 
   ["rofi-familiar"]="Rofi Full"
@@ -59,7 +60,6 @@ declare -A FRIENDLY_NAMES=(
 
   ["xfce4-screenshooter"]="Screenshot"
   ["scrot-options"]="Scrot Options"
-  ["pkill -USR1 -x sxhkd; notify-send --urgency low 'sxhkd configuration reloaded'"]="Reload sxhkd"
 )
 
 # SXHKD keybinds
@@ -115,17 +115,17 @@ mode=="sxhkd" {
 
     label=cmd
 
-    if (match(cmd, /^(x-terminal-emulator|xfce4-terminal|kitty|alacritty|gnome-terminal)[^e]*-e[ ]+([^ ]+)/, m)) {
-        label = m[2]
+    if (cmd ~ /(x-terminal-emulator|xfce4-terminal|kitty|alacritty|gnome-terminal).* -e /) {
+        split(cmd,a," -e ")
+        split(a[2],b," ")
+        label=b[1]
     }
 
     bestlen=0
     for (f in friendly) {
-        if (label ~ "(^|[ /])" f "($|[ ]|&)") {
-            if (length(f) > bestlen) {
-                label = friendly[f]
-                bestlen = length(f)
-            }
+        if (index(label, f) && length(f) > bestlen) {
+            label = friendly[f]
+            bestlen = length(f)
         }
     }
 
