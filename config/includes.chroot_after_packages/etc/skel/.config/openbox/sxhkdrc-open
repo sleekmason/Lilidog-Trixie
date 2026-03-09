@@ -30,6 +30,10 @@ mod4 + c
 mod4 + g
 	toggle.gammy
  
+# Picom.
+mod4 + p
+	toggle.picom
+
 # jgmenu.
 mod4 + j
 	jgmenu_run
@@ -37,10 +41,6 @@ mod4 + j
 # theme-changer.
 mod4 + a
 	ld-themes
-   
-# Toggle polybar panel on/off.
-ctrl  + mod4 + p
-	toggle.polybar
 
 # Toggle tint2 panel on/off.
 ctrl + mod4 + t
@@ -78,7 +78,7 @@ mod4 + m
 mod4 + shift v
 	feh-set-wallpaper	
 
-# Wallpaper.
+# Random BG.
 mod4 + v
 	wallpaper-keybind-toggle
     

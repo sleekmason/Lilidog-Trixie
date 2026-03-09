@@ -18,7 +18,6 @@ MAX_LINE=86
 # Use the followiing section to change the output names as desired.
 declare -A FRIENDLY_NAMES=(
 
-  ["pkill -USR1 -x sxhkd"]="Reload sxhkd"
   ["ld-keys"]="Show Keybinds"
 
   ["rofi-familiar"]="Rofi Full"
@@ -42,10 +41,11 @@ declare -A FRIENDLY_NAMES=(
   ["pragha"]="Pragha Music Player"
   ["x-www-browser"]="Web Browser"
 
+  ["toggle.picom"]="Picom Toggle (transparency)"
   ["toggle.gammy"]="Gammy Toggle"
   ["xfconf-query"]="Thunar Window Split"
   ["feh-set-wallpaper"]="Wallpapers"
-  ["wallpaper-keybind-toggle"]="Random Wallpaper"
+  ["wallpaper-keybind-toggle"]="Random BG"
   
   ["ld-logout"]="Logout"
   ["nakedquit"]="Logout Alternate"
@@ -59,6 +59,7 @@ declare -A FRIENDLY_NAMES=(
 
   ["xfce4-screenshooter"]="Screenshot"
   ["scrot-options"]="Scrot Options"
+  ["pkill -USR1 -x sxhkd; notify-send --urgency low 'sxhkd configuration reloaded'"]="Reload sxhkd"
 )
 
 # SXHKD keybinds
@@ -114,17 +115,17 @@ mode=="sxhkd" {
 
     label=cmd
 
-    if (cmd ~ /(x-terminal-emulator|xfce4-terminal|kitty|alacritty|gnome-terminal).* -e /) {
-    split(cmd,a," -e ")
-    split(a[2],b," ")
-    label=b[1]
-}
+    if (match(cmd, /^(x-terminal-emulator|xfce4-terminal|kitty|alacritty|gnome-terminal)[^e]*-e[ ]+([^ ]+)/, m)) {
+        label = m[2]
+    }
 
     bestlen=0
     for (f in friendly) {
-        if (index(label, f) && length(f) > bestlen) {
-            label = friendly[f]
-            bestlen = length(f)
+        if (label ~ "(^|[ /])" f "($|[ ]|&)") {
+            if (length(f) > bestlen) {
+                label = friendly[f]
+                bestlen = length(f)
+            }
         }
     }
 

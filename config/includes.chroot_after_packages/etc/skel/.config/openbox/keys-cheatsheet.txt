@@ -4,7 +4,7 @@
 Keybinds List =      super + F1
 Refresh sxhkd keys = super + Escape
 Wallpapers =         super + Shift + v
-Wallpapers random =  super + v
+Random BG =          super + v
 Browser =            super + b
 Conky =              super + c
 Rofi                 super + F2
@@ -12,7 +12,6 @@ Dmenu =		         super + F3
 Rofi Drun =	         super + F5
 Editor =             super + e
 File Manager =       super + t
-Fontsize =           super + F6
 Gammy =              super + g    
 Hotcorners =         super + F8
 Jgmenu =             super + j
@@ -23,7 +22,6 @@ Music =              super + m
 Screenshot =         PrtSctr
 Scrot      =         alt + Print
 Terminal =           super + return 
-Toggle polybar =     ctrl super + p
 Toggle tint2 =       ctrl super + t
 Toggle Light Theme = super + y
 Thunar split view =  Alt + s
