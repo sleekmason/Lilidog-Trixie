@@ -50,9 +50,9 @@ Check Firmware,     x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmwa
 Wallpaper Maker,    wallpaper-maker,                  applications-graphics
 Upgrade Options,    update-options,                   system-software-update
 App Alternatives,   galternatives,                    org.xfce.settings.default-applications
-Sxhkd Keys OB,      show-keybinds,                    preferences-desktop-keyboard-shortcuts
 Lucky Backup,       luckybackup,                      luckybackup
 Printer Setup,      x-terminal-emulator -T "Printer Setup" -e bash -c "printer-installer; read -srn1", printer
+All Keybinds,       x-terminal-emulator -T 'Lilidog Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
 USBImager,          /usr/local/bin/usbimager,         usbimager
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
@@ -101,7 +101,6 @@ System Settings,     xfce4-settings-manager,                                    
 Power Manager,       mate-power-preferences,                                               mate-power-manager
 Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
 Tint2 Options,       tint2-options,                                                        tint2conf
-Keybinds,            x-terminal-emulator -T "Keybinds" -e ld-keys,                         document-properties
 Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings
 Jgmenu,              geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Urxvt,               geany ~/.Xresources,                                                  utilities-terminal
