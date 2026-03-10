@@ -71,7 +71,7 @@ Tint2 Options,       tint2-options,                                 org.xfce.set
 Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
 Picom On/Off,        toggle.picom,                                  org.xfce.settings.manager
 Transparency,        transparency-system,                           org.xfce.settings.manager
-Random BG,           toggle-wallpaper-random,                       org.xfce.settings.manager
+BG Daemon,           toggle-wallpaper-random,                       org.xfce.settings.manager
 Sexy Bash,           toggle.sexy,                                   org.xfce.settings.manager
 Rofi Icons,          rofi-options,                                  org.xfce.settings.manager
 Gammy,               toggle.gammy,                                  org.xfce.settings.manager
