@@ -34,6 +34,7 @@ declare -A FRIENDLY_NAMES=(
   ["conky-toggle"]="Conky Toggle"
   ["toggle.polybar"]="Polybar Toggle (if installed)"
   ["toggle.tint2"]="Tint2 Toggle"
+  ["tint2-options"]="Tint2 Options"
 
   ["x-terminal-emulator"]="Terminal"
   ["thunar"]="Thunar File Manager"

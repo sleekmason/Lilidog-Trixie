@@ -43,8 +43,12 @@ mod4 + a
 	ld-themes
 
 # Toggle tint2 panel on/off.
-ctrl + mod4 + t
+mod4 + w
 	toggle.tint2
+	
+# Toggle tint2 Options.
+shift + mod4 + w
+	tint2-options
 
 # Switch to light theme and back.
 mod4 + y
@@ -74,8 +78,8 @@ mod4 + e
 mod4 + m
 	pragha
 
-# Wallpaper.
-mod4 + shift v
+# Wallpapers.
+mod4 + shift + v
 	feh-set-wallpaper	
 
 # Random BG.
