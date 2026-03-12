@@ -18,3 +18,5 @@ sed -i 's/^else/#else/g' "$FILE"
 notify-send --urgency low -i "$iconpath"/upgrade-blue.png 'Apt Upgrade Notifier Off'
 fi
 killall -SIGUSR1 tint2
+killall pnmixer 2>/dev/null
+pnmixer >/dev/null 2>&1 &
