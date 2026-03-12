@@ -124,6 +124,17 @@ sed -i \
 -e 's/^time1_font = .*/time1_font = Noto Sans 11/g' \
 -e 's/^task_font = .*/task_font = Noto Sans Display 10.5/g' \
 -e 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$HOME"/.config/tint2/tint2rc
+
+## Battery defaults
+sed -i \
+-e '/panel_items/s/B//' \
+-e 's/^battery_hide.*/battery_hide = 0/g' \
+-e 's/^battery_tooltip.*/battery_tooltip = 0/g' \
+-e 's/^battery_low_status.*/battery_low_status = 0/g' \
+-e 's/^battery_low_cmd.*/battery_low_cmd =/g' \
+-e 's/^battery_full_cmd.*/battery_full_cmd =/g' \
+-e 's/^ac_connected_cmd.*/ac_connected_cmd =/g' \
+-e 's/^ac_disconnected_cmd.*/ac_disconnected_cmd =/g' "$HOME"/.config/tint2/tint2rc
 killall -SIGUSR1 tint2
 killall pnmixer 2>/dev/null
 pnmixer >/dev/null 2>&1 &
