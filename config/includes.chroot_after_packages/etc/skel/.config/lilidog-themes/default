@@ -100,7 +100,6 @@ sed -i \
 -e 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2light\//g' \
 -e 's/coltint2.*\//coltint2light\//g' \
 -e 's/\(coltint2light.*\)....*$/\1svg/g' "$HOME"/.config/tint2/tint2rc
-sed -i 's/^iconcolor=.*/iconcolor="coltint2light.svg"/g' "$HOME"/.config/tint2/executors/notifier 2>/dev/null
 
 ## Tint2 Font colors
 sed -i \
