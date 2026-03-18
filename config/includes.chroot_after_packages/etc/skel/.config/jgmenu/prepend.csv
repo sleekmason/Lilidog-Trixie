@@ -65,13 +65,14 @@ Font Sizes,          fontsize-changer,                              org.xfce.set
 Gammy,               toggle.gammy,                                  org.xfce.settings.manager
 GXKB,                toggle.gxkb,                                   org.xfce.settings.manager
 Hotcorners,          toggle.ld,                                     org.xfce.settings.manager
-Jgmenu,              jg-icon-changer,                               org.xfce.settings.manager
+Jgmenu Icons,        jg-icon-changer,                               org.xfce.settings.manager
 Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
-OSprober,            osprober-toggle,                               org.xfce.settings.manager
+OSprober On/Off,     osprober-toggle,                               org.xfce.settings.manager
 Picom On/Off,        toggle.picom,                                  org.xfce.settings.manager
 Rofi Icons,          rofi-options,                                  org.xfce.settings.manager
 Sexy Bash,           toggle.sexy,                                   org.xfce.settings.manager
 Sounds,              notification-sounds,                           org.xfce.settings.manager
+Theme Options,       ld-theme-changer,                              org.xfce.settings.manager
 Tint2 On/Off,        toggle.tint2,                                  org.xfce.settings.manager
 Tint2 Options,       tint2-options,                                 org.xfce.settings.manager
 Transparency,        transparency-system,                           org.xfce.settings.manager
@@ -86,17 +87,17 @@ Xkill,               xkill,                                         edit-delete
 
 ^tag(configuration)
 App Alternatives,    galternatives,                                                        org.xfce.settings.default-applications
-Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
-Jgmenu,              geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
+Grub Backgrounds,    x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
+Jgmenu Conf,         geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
-Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings
-Openbox,             obconf,                                                               obconf
-Picom,               geany ~/.config/picom.conf,                                           document-properties
+Lightdm Control,     lightdm-options,                                                      lightdm-gtk-greeter-settings
+Openbox Settings,    obconf,                                                               obconf
+Picom Conf,          geany ~/.config/picom.conf,                                           document-properties
 Power Manager,       mate-power-preferences,                                               mate-power-manager
-Quick Themes,        ld-theme-changer,                                                     preferences-desktop-theme
 System Settings,     xfce4-settings-manager,                                               org.xfce.settings.manager
+Theme Options,       ld-theme-changer,                                                     preferences-desktop-theme
 Tint2 Options,       tint2-options,                                                        tint2conf
-Urxvt,               geany ~/.Xresources,                                                  utilities-terminal
+Urxvt Conf,          geany ~/.Xresources,                                                  utilities-terminal
 Wallpapers,          feh-set-wallpaper,                                                    preferences-desktop-display
 
 ^tag(apps)
