@@ -90,7 +90,7 @@ App Alternatives,    galternatives,                                             
 Grub Backgrounds,    x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
 Hotcorners Conf,     geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
 Jgmenu Conf,         geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
-Lightdm Control,     lightdm-options,                                                      lightdm-gtk-greeter-settings
+Lightdm Options,     lightdm-options,                                                      lightdm-gtk-greeter-settings
 Openbox Settings,    obconf,                                                               obconf
 Picom Conf,          geany ~/.config/picom.conf,                                           document-properties
 Power Manager,       mate-power-preferences,                                               mate-power-manager
