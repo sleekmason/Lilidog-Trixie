@@ -35,7 +35,7 @@ Meld,               meld,                              document-properties
 
 ^tag(sysinfo)
 Fastfetch,          x-terminal-emulator -T 'Fastfetch' -e bash -c "fastfetch; bash",  utilities-system-monitor
-Firmware,           x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
+Firmware Check,     x-terminal-emulator -T 'Firmware Check' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Hard Info,          hardinfo2,                         hardinfo2
 Htop,               x-terminal-emulator -T 'Htop' -e htop,                    htop
 HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
@@ -63,15 +63,15 @@ BG Daemon,           toggle-wallpaper-random,                       org.xfce.set
 Conky,               conky-toggle,                                  org.xfce.settings.manager
 Font Sizes,          fontsize-changer,                              org.xfce.settings.manager
 Gammy,               toggle.gammy,                                  org.xfce.settings.manager
-GXKB,                toggle.gxkb,                                   org.xfce.settings.manager
+GXKB On/Off,         toggle.gxkb,                                   org.xfce.settings.manager
 Hotcorners,          toggle.ld,                                     org.xfce.settings.manager
 Jgmenu Icons,        jg-icon-changer,                               org.xfce.settings.manager
 Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
+Notification Sounds, notification-sounds,                           org.xfce.settings.manager
 OSprober On/Off,     osprober-toggle,                               org.xfce.settings.manager
 Picom On/Off,        toggle.picom,                                  org.xfce.settings.manager
 Rofi Icons,          rofi-options,                                  org.xfce.settings.manager
 Sexy Bash Prompt,    toggle.sexy,                                   org.xfce.settings.manager
-Notification Sounds, notification-sounds,                           org.xfce.settings.manager
 Theme Options,       ld-theme-changer,                              org.xfce.settings.manager
 Tint2 On/Off,        toggle.tint2,                                  org.xfce.settings.manager
 Tint2 Options,       tint2-options,                                 org.xfce.settings.manager
