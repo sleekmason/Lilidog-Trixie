@@ -66,13 +66,12 @@ Gammy,               toggle.gammy,                                  org.xfce.set
 GXKB On/Off,         toggle.gxkb,                                   org.xfce.settings.manager
 Hotcorners,          toggle.ld,                                     org.xfce.settings.manager
 Jgmenu Icons,        jg-icon-changer,                               org.xfce.settings.manager
+Key Bindings,        x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
 Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
 Notification Sounds, notification-sounds,                           org.xfce.settings.manager
 OSprober On/Off,     osprober-toggle,                               org.xfce.settings.manager
 Picom On/Off,        toggle.picom,                                  org.xfce.settings.manager
-Rofi Icons,          rofi-options,                                  org.xfce.settings.manager
 Sexy Bash Prompt,    toggle.sexy,                                   org.xfce.settings.manager
-Theme Options,       ld-theme-changer,                              org.xfce.settings.manager
 Tint2 On/Off,        toggle.tint2,                                  org.xfce.settings.manager
 Tint2 Options,       tint2-options,                                 org.xfce.settings.manager
 Transparency,        transparency-system,                           org.xfce.settings.manager
@@ -86,17 +85,20 @@ Xkill,               xkill,                                         edit-delete
 /usr/share,               gksudo thunar /usr/share,               folder-documents
 
 ^tag(configuration)
-App Alternatives,    galternatives,                                                        org.xfce.settings.default-applications
-Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
-Hotcorners Conf,     geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
-Jgmenu Conf,         geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
-Lightdm Options,     lightdm-options,                                                      lightdm-gtk-greeter-settings
-Openbox Settings,    obconf,                                                               obconf
-Picom Conf,          geany ~/.config/picom.conf,                                           document-properties
-Power Manager,       mate-power-preferences,                                               mate-power-manager
-System Settings,     xfce4-settings-manager,                                               org.xfce.settings.manager
-Theme Options,       ld-theme-changer,                                                     preferences-desktop-theme
-Tint2 Options,       tint2-options,                                                        tint2conf
-Wallpapers,          feh-set-wallpaper,                                                    preferences-desktop-display
-
+App Alternatives,      galternatives,                                                        org.xfce.settings.default-applications
+Grub Background,       x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
+Hotcorners Conf,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        document-properties
+Jgmenu Conf,           geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
+Keybinds Conf (sxhkd), geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
+Lightdm Options,       lightdm-options,                                                      lightdm-gtk-greeter-settings
+Openbox Settings,      obconf,                                                               obconf
+Picom Conf,            geany ~/.config/picom.conf,                                           document-properties
+Power Manager,         mate-power-preferences,                                               mate-power-manager
+Random BG Conf,        geany ~/.config/random-bg.conf,                                      document-properties
+Rofi Options,          rofi-options,                                                         rofi
+System Settings,       xfce4-settings-manager,                                               org.xfce.settings.manager
+Theme Options,         ld-theme-changer,                                                     preferences-desktop-theme
+Tint2 Options,         tint2-options,                                                        tint2conf
+Wallpapers,            feh-set-wallpaper,                                                    feh
+Wallpapers Conf,       geany ~/.config/wallpapers.conf,                                      document-properties
 ^tag(apps)
