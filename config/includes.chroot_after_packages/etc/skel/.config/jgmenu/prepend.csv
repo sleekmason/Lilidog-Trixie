@@ -44,11 +44,11 @@ lxtask,             lxtask,                           applications-engineering
 
 ^tag(utilities)
 System Info,^checkout(sysinfo),folder
-All Keybinds,       x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
 Color Chooser,      yad --color --gtk-palette --palette=/usr/share/X11/rgb.txt,                     org.xfce.settings.color
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
 Kernel Remover,     gksudo /usr/local/bin/kernel-remover,     applications-accessories
+Key Bindings,        x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
 Lilidog Installers, ld-installers,                    preferences-system-search
 Lucky Backup,       luckybackup,                      luckybackup
 QBittorrent,        qbittorrent,                      qbittorrent
@@ -66,7 +66,6 @@ Gammy,               toggle.gammy,                                  org.xfce.set
 GXKB On/Off,         toggle.gxkb,                                   org.xfce.settings.manager
 Hotcorners,          toggle.ld,                                     org.xfce.settings.manager
 Jgmenu Icons,        jg-icon-changer,                               org.xfce.settings.manager
-Key Bindings,        x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
 Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
 Notification Sounds, notification-sounds,                           org.xfce.settings.manager
 OSprober On/Off,     osprober-toggle,                               org.xfce.settings.manager
