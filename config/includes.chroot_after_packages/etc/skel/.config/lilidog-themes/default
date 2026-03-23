@@ -6,34 +6,28 @@
 
 ## Lightdm Greeter settings for theme, wallpaper, position, icons, and font. (Requires Sudo)
 if command -v lightdm >/dev/null; then
-GREETER=$(grep -E '^[[:space:]]*greeter-session=' /etc/lightdm/lightdm.conf | cut -d= -f2)
+GREETER=$(grep -E '^[[:space:]]*greeter-session=' /etc/lightdm/lightdm.conf | cut -d= -f2 | tail -n1)
 
 [[ -z "$GREETER" ]] && GREETER="lightdm-gtk-greeter"
+if [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
+    WALL="/usr/share/backgrounds/wallpapers/Foggypines.jpg"
+else
+    WALL=$(grep -oE "['\"][^'\"]+\.(jpg|jpeg|png|webp)['\"]" "$HOME/.fehbg" 2>/dev/null | tail -n1 | tr -d "'\"")
+fi
 
 if [[ "$GREETER" == "lightdm-gtk-greeter" ]]; then
-if [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
-        sudo sed -i "s/theme-name.*/theme-name = Foggypines/g" /etc/lightdm/lightdm-gtk-greeter.conf
-        sudo sed -i "s|^background.*|background = /usr/share/backgrounds/wallpapers/Foggypines.jpg|g" /etc/lightdm/lightdm-gtk-greeter.conf
-    else
-        sudo sed -i "s/theme-name.*/theme-name = Fane/g" /etc/lightdm/lightdm-gtk-greeter.conf
-        sudo sed -i "s|^background.*|background = /usr/share/backgrounds/wallpapers/Fane.jpg|g" /etc/lightdm/lightdm-gtk-greeter.conf
-    fi
+sudo sed -i "s|^background.*|background = $WALL|g" /etc/lightdm/lightdm-gtk-greeter.conf
+sudo sed -i "s/icon-theme-name.*/icon-theme-name = Lilidog-lightdm/g" /etc/lightdm/lightdm-gtk-greeter.conf
+sudo sed -i "s/^theme-name.*/theme-name = Fane/g" /etc/lightdm/lightdm-gtk-greeter.conf
 sudo sed -i "s/position.*/position = -4%,end 10%,start/g" /etc/lightdm/lightdm-gtk-greeter.conf
-sudo sed -i "s/font-name.*/font-name = Noto Sans 11/g" /etc/lightdm/lightdm-gtk-greeter.conf
+sudo sed -i "s/^font-name.*/font-name = Noto Sans 10/g" /etc/lightdm/lightdm-gtk-greeter.conf
 fi
 
 if [[ "$GREETER" == "slick-greeter" ]]; then
+sudo sed -i "s|^background.*|background=$WALL|g" /etc/lightdm/slick-greeter.conf
 sudo sed -i "s/icon-theme-name.*/icon-theme-name=Obsidian/g" /etc/lightdm/slick-greeter.conf
-
-if [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
-        sudo sed -i "s/theme-name.*/theme-name=Foggypines/g" /etc/lightdm/slick-greeter.conf
-        sudo sed -i "s|^background.*|background=/usr/share/backgrounds/wallpapers/Foggypines.jpg|g" /etc/lightdm/slick-greeter.conf
-    else
-        sudo sed -i "s/theme-name.*/theme-name=Fane/g" /etc/lightdm/slick-greeter.conf
-        sudo sed -i "s|^background.*|background=/usr/share/backgrounds/wallpapers/Fane.jpg|g" /etc/lightdm/slick-greeter.conf
-fi
-
-sudo sed -i "s/font-name.*/font-name=Noto Sans 10/g" /etc/lightdm/slick-greeter.conf
+sudo sed -i "s/^theme-name.*/theme-name=Fane/g" /etc/lightdm/slick-greeter.conf
+sudo sed -i "s/^font-name.*/font-name=Noto Sans 10/g" /etc/lightdm/slick-greeter.conf
 sudo sed -i "s/clock-format.*/clock-format=%H:%M   %a, %b %d %Y/g" /etc/lightdm/slick-greeter.conf
 fi
 fi
@@ -43,7 +37,7 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Fane"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Teal"
 
 ## Picom transparency
-if [[ $(command -v picom) ]]; then
+if command -v picom >/dev/null; then
 if pgrep -x picom > /dev/null 2>&1; then
 pkill -x picom
 fi
@@ -63,7 +57,7 @@ xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/
 openbox --reconfigure
 
 ## Rofi theme
-if [[ $(command -v rofi) ]]; then
+if command -v rofi >/dev/null; then
 sed -i \
 -e 's/^@theme "rounded.*/@theme "rounded-fane.rasi"/g' \
 -e 's/^font: "Noto Sans.*/font: "Noto Sans 11";/g' \
@@ -78,14 +72,14 @@ rm -f ~/.cache/rofi3.druncache
 fi
 
 ## Geany theme
-if [[ $(command -v geany) ]]; then
+if command -v geany >/dev/null; then
 sed -i \
 -e "s/color_scheme=.*/color_scheme=Fane.conf/g" \
 -e "s/editor_font=.*/editor_font=JetBrains Mono Light 10/g" ~/.config/geany/geany.conf
 fi
 
 ## jgmenu theme
-if [[ $(command -v jgmenu) ]]; then
+if command -v jgmenu >/dev/null; then
 if test -e ~/.config/jgmenu/backup; then
 rm -fr ~/.config/jgmenu/backup
 fi
@@ -169,14 +163,14 @@ else
 fi
 
 ## Sounds - Dunst
-if [[ $(command -v dunst) ]]; then
+if command -v dunst >/dev/null; then
 sed -i '/summary/d' ~/.config/dunst/dunstrc
 sed -i '/sounds/d' ~/.config/dunst/dunstrc
 killall -q dunst
 fi
 
 ## Conky
-if [[ $(command -v conky) ]]; then
+if command -v conky >/dev/null; then
 killall -q conky
 sed -i \
 -e '/own_window_transparent/c\own_window_transparent = true,' \
