@@ -25,7 +25,6 @@ Libreoffice,        libreoffice,                       libreoffice-writer
 Mousepad,           mousepad,                          accessories-text-editor
 Newsboat,           x-terminal-emulator -e newsboat,   accessories-text-editor
 Pragha,             pragha,                            pragha
-Radiotray-NG,       radiotray-ng,                      audio-headphones
 Development,^checkout(development),applications-development
 
 ^tag(development)
