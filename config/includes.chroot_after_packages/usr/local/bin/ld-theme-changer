@@ -9,7 +9,7 @@ yad --title "Theming Options" --form --center --borders=14 --buttons-layout=edge
     --field="        Auto Themes!$HOME/.config/lilidog-themes/icons/paw-theme-18.png":FBTN "ld-themes" \
     --field="                   Conky!conky-logomark-violet":FBTN "conky-toggle" \
     --field="              Font Size!font-x-generic":FBTN "fontsize-changer" \
-    --field="               Grub BG!org.xfce.settings.editor":FBTN "x-terminal-emulator -T 'Grub Background Changer' -e bash -c 'grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1'" \
+    --field="               Grub BG!org.xfce.settings.editor":FBTN "x-terminal-emulator --title='Grub Background Changer' -e bash -c 'grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1'" \
     --field="                    Icons!preferences-other":FBTN "bash -c 'xfce4-appearance-settings & sleep 0.5; xdotool key Alt+i &'" \
     --field="                 Jgmenu!jgmenu":FBTN "jg-icon-changer" \
     --field="               LightDM!lightdm-gtk-greeter-settings":FBTN "lightdm-options" \
