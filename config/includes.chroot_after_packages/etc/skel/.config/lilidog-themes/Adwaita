@@ -5,6 +5,9 @@
 ## Change gtktheme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita"
 
+## If existing, Copy gtk-4.0 to ~/.config/gtk-4.0 Remove for Adwaita
+rm -rf $HOME/.config/gtk-4.0/*
+
 ## Change icon theme
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian"
 

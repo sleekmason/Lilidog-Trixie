@@ -5,6 +5,14 @@
 ## Change gtktheme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adobe"
 
+THEME=Adobe
+if test -d "/usr/share/themes/${THEME}/gtk-4.0"; then
+    mkdir -p "$HOME/.config/gtk-4.0"
+    rm -rf "$HOME/.config/gtk-4.0"/* 2>/dev/null
+    ln -sf "/usr/share/themes/${THEME}/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
+    ln -sf "/usr/share/themes/${THEME}/gtk-4.0/assets" "$HOME/.config/gtk-4.0/assets"
+fi
+
 ## Change icon theme
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Sand"
 
