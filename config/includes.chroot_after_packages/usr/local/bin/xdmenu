@@ -3,6 +3,7 @@
 # Made by sleekmason 31 Jan 2026
 
 set -euo pipefail
+export PATH="/usr/local/bin:$PATH"
 
 showhelp() {
     echo "xdmenu - Wrapper for dmenu. Shows only programs with"

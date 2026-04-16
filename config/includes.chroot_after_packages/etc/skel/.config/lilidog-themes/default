@@ -36,15 +36,6 @@ fi
 xfconf-query -c xsettings -p /Net/ThemeName -s "Fane"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Teal"
 
-## If existing, Copy gtk-4.0 to ~/.config/gtk-4.0
-THEME=Fane
-if test -d "/usr/share/themes/${THEME}/gtk-4.0"; then
-    mkdir -p "$HOME/.config/gtk-4.0"
-    rm -rf "$HOME/.config/gtk-4.0"/* 2>/dev/null
-    ln -sf "/usr/share/themes/${THEME}/gtk-4.0/gtk.css" "$HOME/.config/gtk-4.0/gtk.css"
-    ln -sf "/usr/share/themes/${THEME}/gtk-4.0/assets" "$HOME/.config/gtk-4.0/assets"
-fi
-
 ## Picom transparency
 if command -v picom >/dev/null; then
 if pgrep -x picom > /dev/null 2>&1; then
