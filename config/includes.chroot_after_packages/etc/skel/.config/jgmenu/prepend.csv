@@ -34,14 +34,14 @@ Icon Browser,       yad-icon-browser,                  applications-science
 Meld,               meld,                              document-properties
 
 ^tag(sysinfo)
-Fastfetch,          x-terminal-emulator --title='Fastfetch' -e bash -c "fastfetch; bash",  utilities-system-monitor
-Firmware Check,     x-terminal-emulator --title='Firmware Check' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
+Fastfetch,          x-terminal-emulator -T 'Fastfetch' -e bash -c "fastfetch; bash",  utilities-system-monitor
+Firmware Check,     x-terminal-emulator -T 'Firmware Check' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Hard Info,          hardinfo2,                         hardinfo2
-Htop,               x-terminal-emulator --title='Htop' -e htop,                    htop
-HW-Probe,           x-terminal-emulator --title='Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
-Inxi Info,          x-terminal-emulator --title='Inxi Info' -e bash -c "inxi -Fxrzm; echo $'\n\nPress any key to close'; read -srn1",   document-properties
+Htop,               x-terminal-emulator -T 'Htop' -e htop,                    htop
+HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
+Inxi Info,          x-terminal-emulator -T 'Inxi Info' -e bash -c "inxi -Fxrzm; echo $'\n\nPress any key to close'; read -srn1",   document-properties
 lxtask,             lxtask,                           applications-engineering
-Ps_mem,             x-terminal-emulator --title="Ps_mem - Memory Profiling Tool" -e bash -c "sudo ps_mem; echo $'\n\nPress any key to close'; read -srn1", disks
+Ps_mem,             x-terminal-emulator -T "Ps_mem - Memory Profiling Tool" -e bash -c "sudo ps_mem; echo $'\n\nPress any key to close'; read -srn1", disks
 
 ^tag(utilities)
 System Info,^checkout(sysinfo),folder
@@ -49,7 +49,7 @@ Color Picker,       yad --color --gtk-palette --palette=/usr/share/X11/rgb.txt, 
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
 Kernel Remover,     gksudo /usr/local/bin/kernel-remover,     applications-accessories
-Key Bindings,        x-terminal-emulator --title='Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
+Key Bindings,        x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
 Lilidog Installers, ld-installers,                    preferences-system-search
 Lucky Backup,       luckybackup,                      luckybackup
 QBittorrent,        qbittorrent,                      qbittorrent
@@ -87,7 +87,7 @@ Xkill,               xkill,                                         edit-delete
 ^tag(configuration)
 App Alternatives,      galternatives,                                                        org.xfce.settings.default-applications
 Display Settings,      xfce4-display-settings,                                               org.xfce.settings.display
-Grub Background,       x-terminal-emulator --title='Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
+Grub Background,       x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
 Hotcorners Conf,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        document-properties
 Jgmenu Conf,           geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Keybinds Conf (sxhkd), geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
