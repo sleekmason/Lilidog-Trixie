@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Login Options
+Exec=login-options
+StartupNotify=false
+Terminal=false
+Icon=user_icon
+Categories=GNOME;GTK;Settings;System;Utility;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
