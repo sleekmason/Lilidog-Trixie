@@ -1,7 +1,10 @@
 Auto Themes,                ld-themes,                                org.xfce.settings.color
 Conky Options,              conky-toggle,                             conky-logomark-violet
+Jgmenu Icons,               jg-icon-changer,                          jgmenu
+Lilidog Installers,         ld-installers,                            preferences-system-search
 Notification Sounds,        notification-sounds,                      audio-x-generic
 Openbox Settings,           obconf,                                   obconf
+Rofi Icons,                 rofi-options,                             rofi
 System Settings,            xfce4-settings-manager,                   org.xfce.settings.manager
 Tint2 Options,              tint2-options,                            tint2conf
 Transparency,               transparency-system,                      pda
