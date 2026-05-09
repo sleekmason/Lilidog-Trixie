@@ -153,6 +153,7 @@ _add_ly() {
                 apt-get update && apt-get install -y /tmp/ly_1.3.2-ld_amd64.deb
                 systemctl enable --force ly@tty1.service
                 ln -sf /usr/lib/systemd/system/ly@.service /etc/systemd/system/display-manager.service
+                sed -i '/greeter-session=.*/d' /etc/lightdm/lightdm.conf || true
                 ## Menu additions
                if [[ $(command -v ly) ]]; then
                    if grep -Fxq 'exec "$session"' /home/"${SUDO_USER}"/.xsessionrc; then
