@@ -186,7 +186,7 @@ _firmware() {
 }
 
 _reboot() {
-      _msg="Reboot? - After display manager installation (LightDM, Ly)"
+      _msg="Reboot? - (after display manager installation)"
       do_it() { sed -i '/welcome-backend.sh.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
 		  if ! grep hypervisor /proc/cpuinfo ; then
           sed -i '/vmrestore.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
@@ -204,7 +204,7 @@ _remove_packages
 _add_backports
 #_upgrade_kernel
 _add_slick
-_add_ly
+#_add_ly
 _osprober
 _firmware
 _reboot
@@ -219,7 +219,7 @@ _remove_packages
 _add_backports
 #_upgrade_kernel
 _add_slick
-_add_ly
+#_add_ly
 _firmware
 _reboot
 sed -i '/welcome-backend.sh.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
