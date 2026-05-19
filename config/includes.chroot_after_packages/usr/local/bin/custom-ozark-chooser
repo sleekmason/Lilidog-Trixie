@@ -89,6 +89,7 @@ if [[ -n "$COLOR_CHOICE" ]]; then
     echo "#$NEW_COLOR" >> "/tmp/${GTK_THEME}_color.txt"
 
     for file in \
+        "$HOME/.themes/$GTK_THEME/gtk-4.0/gtk.css" \
         "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css" \
         "$HOME/.themes/$GTK_THEME/gtk-2.0/gtkrc" \
         "$HOME/.themes/$OPENBOX_THEME/openbox-3/themerc"; do
