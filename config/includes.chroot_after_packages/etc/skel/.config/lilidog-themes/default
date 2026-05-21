@@ -9,10 +9,12 @@ if command -v lightdm >/dev/null; then
 GREETER=$(grep -E '^[[:space:]]*greeter-session=' /etc/lightdm/lightdm.conf | cut -d= -f2 | tail -n1)
 
 [[ -z "$GREETER" ]] && GREETER="lightdm-gtk-greeter"
-if [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
+if [[ -f "/usr/share/backgrounds/wallpapers/Default.jpg" ]]; then
+    WALL="/usr/share/backgrounds/wallpapers/Default.jpg"
+elif [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
     WALL="/usr/share/backgrounds/wallpapers/Foggypines.jpg"
 else
-    WALL=$(grep -oE "['\"][^'\"]+\.(jpg|jpeg|png|webp)['\"]" "$HOME/.fehbg" 2>/dev/null | tail -n1 | tr -d "'\"")
+    WALL="/usr/share/backgrounds/wallpapers/Fane.jpg"
 fi
 
 if [[ "$GREETER" == "lightdm-gtk-greeter" ]]; then
@@ -156,7 +158,9 @@ killall pnmixer 2>/dev/null
 pnmixer >/dev/null 2>&1 &
 
 ## Feh background
-if [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
+if [[ -f "/usr/share/backgrounds/wallpapers/Default.jpg" ]]; then
+    feh --bg-scale "/usr/share/backgrounds/wallpapers/Default.jpg"
+elif [[ -f "/usr/share/backgrounds/wallpapers/Foggypines.jpg" ]]; then
     feh --bg-scale "/usr/share/backgrounds/wallpapers/Foggypines.jpg"
 else
     feh --bg-scale "/usr/share/backgrounds/wallpapers/Fane.jpg"

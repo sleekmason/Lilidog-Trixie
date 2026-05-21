@@ -1,23 +1,17 @@
 
                  WELCOME TO LILIDOG!
                         
-    Welcome to the Lilidog Linux amd64 full build
-    version, providing all the programs necessary 
-    for fast, efficient, and productive use.
-     
-    Please visit the forum for more information:
+    Designed for easy customization and efficient
+    productive use regardless of skill level.
+    
     https://sourceforge.net/p/lilidog/discussion/
     
-    For initial settings see the 'landscape' icon
-    located in the tint2 panel. Font size, themes
-    wallpapers, and other options are available.
+    For the live environment:
+    username = 'user', and root password = 'live'
 
-    The live environment passwords are 'user' for 
-    username, and 'live' for root.
-
-    To install Lilidog, reboot the iso and choose 
+    To install Lilidog, reboot the iso and choose
     'Start installer'.
     
     After installation, use the welcome script to
     see other initial setup options. You can also
-    type 'welcome' in a terminal for use later.
+    type 'welcome' in a terminal to use later.
