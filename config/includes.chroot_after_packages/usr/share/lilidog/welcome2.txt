@@ -1,8 +1,8 @@
 
                  WELCOME TO LILIDOG!
              
-    This is the full Lilidog version, with all of
-    programs necessary for general use included.
+    See customization options in the Tint2 panel,
+    and some nifty items through the installers.
     
     To report any issues or bugs:   
     https://sourceforge.net/p/lilidog/discussion/
