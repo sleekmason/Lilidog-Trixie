@@ -1,8 +1,8 @@
 
                  WELCOME TO LILIDOG!
              
-    See customization options in the Tint2 panel,
-    and some nifty items through the installers.
+    Find customization options in the tint2 panel
+    and browse new packages in the installers.
     
     To report any issues or bugs:   
     https://sourceforge.net/p/lilidog/discussion/
