@@ -2,7 +2,7 @@
 ## Do not remove or change format!
 
 # Color
-default_color = '#c4c4c4',
+default_color = '#bebebe',
 
 # Time
 time %H:%M
