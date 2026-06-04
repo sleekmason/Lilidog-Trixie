@@ -1,14 +1,14 @@
 
                  WELCOME TO LILIDOG!
              
-    Find customization options in the tint2 panel
-    and browse new packages in the installers.
+    This build has all the packages necessary for
+    efficient use and easy customization.
     
-    To report any issues or bugs:   
     https://sourceforge.net/p/lilidog/discussion/
     
-    For the live environment:
-    username = 'user', and root password = 'live'
+    Use 'Super + F1' to see the current keybinds.
+    Live environment passwords: Username = 'user'
+    Root password = 'live'
 
     To install Lilidog reboot the iso and choose:
     'Start installer'
