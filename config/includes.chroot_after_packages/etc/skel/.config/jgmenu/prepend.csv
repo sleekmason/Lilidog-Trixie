@@ -98,6 +98,7 @@ Power Manager,         mate-power-preferences,                                  
 Random BG Conf,        geany ~/.config/random-bg.conf,                                      document-properties
 Rofi Options,          rofi-options,                                                         rofi
 System Settings,       xfce4-settings-manager,                                               org.xfce.settings.manager
+Terminal Choice,       x-terminal-emulator -T 'Terminal Choice' -e "sudo update-alternatives --config x-terminal-emulator",  terminal
 Theme Options,         ld-theme-changer,                                                     preferences-desktop-theme
 Tint2 Options,         tint2-options,                                                        tint2conf
 Wallpapers,            feh-set-wallpaper,                                                    preferences-desktop-wallpaper
