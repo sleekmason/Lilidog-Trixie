@@ -181,8 +181,8 @@ sed -i \
 -e '/own_window_argb_visual/c\-- own_window_argb_visual = true,' \
 -e '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
 OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/scripts/defaults.txt" | cut -d'#' -f2 | sed 's/..$//')
-sed -i "s/${OLD_COLOR}/c4c4c4/g" "$HOME"/.config/conky/*.conf 2>/dev/null
-sed -i "s/${OLD_COLOR}/c4c4c4/g" "$HOME/.config/conky/scripts/defaults.txt" 2>/dev/null
+sed -i "s/${OLD_COLOR}/bebebe/g" "$HOME"/.config/conky/*.conf 2>/dev/null
+sed -i "s/${OLD_COLOR}/bebebe/g" "$HOME/.config/conky/scripts/defaults.txt" 2>/dev/null
 if test -f "$HOME"/.config/conky/conky-shortcuts.conf; then
 set -m; conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &> /dev/null
 fi
