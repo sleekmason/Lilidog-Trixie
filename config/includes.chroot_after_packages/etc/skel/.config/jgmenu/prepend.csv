@@ -34,10 +34,10 @@ Icon Browser,       yad-icon-browser,                  applications-science
 Meld,               meld,                              document-properties
 
 ^tag(sysinfo)
+Btop,               x-terminal-emulator -T 'Btop' -e btop,                    btop
 Fastfetch,          x-terminal-emulator -T 'Fastfetch' -e bash -c "fastfetch; bash",  utilities-system-monitor
 Firmware Check,     x-terminal-emulator -T 'Firmware Check' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Hard Info,          hardinfo2,                         hardinfo2
-Htop,               x-terminal-emulator -T 'Htop' -e htop,                    htop
 HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Inxi Info,          x-terminal-emulator -T 'Inxi Info' -e bash -c "inxi -Fxrzm; echo $'\n\nPress any key to close'; read -srn1",   document-properties
 lxtask,             lxtask,                           applications-engineering

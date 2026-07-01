@@ -12,6 +12,7 @@ bash-completion
 bind9-dnsutils
 brightnessctl 
 brightness-udev
+btop
 btrfs-progs
 bzip2
 7zip
@@ -88,7 +89,6 @@ gvfs-fuse
 gxkb
 hardinfo
 hdparm
-htop
 hunspell-en-us
 hyphen-en-us
 imagemagick
