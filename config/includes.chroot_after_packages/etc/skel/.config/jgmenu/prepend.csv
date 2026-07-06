@@ -88,7 +88,7 @@ Xkill,               xkill,                                         edit-delete
 ^tag(configuration)
 App Alternatives,      galternatives,                                                        org.xfce.settings.default-applications
 Display Settings,      xfce4-display-settings,                                               org.xfce.settings.display
-GRUB Background,       x-terminal-emulator -T 'GRUB Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
+GRUB Background,       grub-bg-changer.sh,                                                   preferences-desktop-wallpaper
 Hotcorners Conf,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        document-properties
 Jgmenu Conf,           geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Keybinds Conf (sxhkd), geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
@@ -97,7 +97,7 @@ Logout Options,        logout-theme-chooser,                                    
 Openbox Settings,      obconf,                                                               obconf
 Picom Conf,            geany ~/.config/picom.conf,                                           document-properties
 Power Manager,         mate-power-preferences,                                               mate-power-manager
-Random BG Conf,        geany ~/.config/random-bg.conf,                                      document-properties
+Random BG Conf,        geany ~/.config/random-bg.conf,                                       document-properties
 Rofi Options,          rofi-options,                                                         rofi
 System Settings,       xfce4-settings-manager,                                               org.xfce.settings.manager
 Theme Options,         ld-theme-changer,                                                     preferences-desktop-theme
