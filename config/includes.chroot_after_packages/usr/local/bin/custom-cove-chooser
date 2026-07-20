@@ -6,6 +6,7 @@ set -e
 
 ### Set your default highlight color
 DEFAULT_COLOR="#35bcbd"
+DEFAULT_ICON_THEME="Obsidian-Teal"
 
 ### Set your theme names
 GTK_THEME="Custom-cove"
@@ -61,13 +62,25 @@ if [ "$RETVAL" -ne 0 ]; then
     exit 0
 fi
 
-# Capture current icon theme and save it immediately
+# Capture current icon theme
 CURRENT_ICON_THEME=$(xfconf-query -c xsettings -p /Net/IconThemeName)
+
+if [[ "$CURRENT_ICON_THEME" == "$ORIGINAL_ICON_THEME" ]]; then
+    ICON_THEME_TO_SET="$DEFAULT_ICON_THEME"
+else
+    ICON_THEME_TO_SET="$CURRENT_ICON_THEME"
+fi
+
 sed -i \
-  "s|^\(#\s*\)\?xfconf-query -c xsettings -p /Net/IconThemeName -s \".*\"|xfconf-query -c xsettings -p /Net/IconThemeName -s \"$CURRENT_ICON_THEME\"|" \
+  "s|^\(#\s*\)\?xfconf-query -c xsettings -p /Net/IconThemeName -s \".*\"|xfconf-query -c xsettings -p /Net/IconThemeName -s \"$ICON_THEME_TO_SET\"|" \
   "$HOME/.config/lilidog-themes/$GTK_THEME"
+
 sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^#\s*//' \
   "$HOME/.config/lilidog-themes/$GTK_THEME"
+
+"$HOME/.config/lilidog-themes/$GTK_THEME"
+
+xfconf-query -c xsettings -p /Net/IconThemeName -s "$ICON_THEME_TO_SET"
 
 # Mark done so trap won't revert icons
 APPLY_DONE=1
