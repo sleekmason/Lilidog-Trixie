@@ -74,42 +74,34 @@ fi
 sed -i \
   "s|^\(#\s*\)\?xfconf-query -c xsettings -p /Net/IconThemeName -s \".*\"|xfconf-query -c xsettings -p /Net/IconThemeName -s \"$ICON_THEME_TO_SET\"|" \
   "$HOME/.config/lilidog-themes/$GTK_THEME"
-
 sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^#\s*//' \
   "$HOME/.config/lilidog-themes/$GTK_THEME"
-
-"$HOME/.config/lilidog-themes/$GTK_THEME"
-
-xfconf-query -c xsettings -p /Net/IconThemeName -s "$ICON_THEME_TO_SET"
 
 # Mark done so trap won't revert icons
 APPLY_DONE=1
 
-# Apply color if chosen, while removing cruft
+# Apply color
 if [[ -n "$COLOR_CHOICE" ]]; then
     NEW_COLOR=$(echo "$COLOR_CHOICE" | sed 's|[#,]||g')
-
     if grep -q "#$NEW_COLOR" "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css"; then
         echo
         echo "--------------------------------------------"
-        echo "Your color choice is null or already in use."
-        echo "Please make another selection."
+        echo "Color already matches current — skipping CSS edit."
         echo "--------------------------------------------"
-        exit 0
+    else
+        OLD_COLOR=$(sed '16!d' "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css" | cut -d'#' -f2 | sed 's/...$//')
+        echo "#$NEW_COLOR" >> "/tmp/${GTK_THEME}_color.txt"
+        for file in \
+            "$HOME/.themes/$GTK_THEME/gtk-4.0/gtk.css" \
+            "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css" \
+            "$HOME/.themes/$GTK_THEME/gtk-2.0/gtkrc" \
+            "$HOME/.themes/$OPENBOX_THEME/openbox-3/themerc"; do
+            sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$file"
+        done
     fi
-
-    OLD_COLOR=$(sed '16!d' "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css" | cut -d'#' -f2 | sed 's/...$//')
-    echo "#$NEW_COLOR" >> "/tmp/${GTK_THEME}_color.txt"
-
-    for file in \
-        "$HOME/.themes/$GTK_THEME/gtk-4.0/gtk.css" \
-        "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css" \
-        "$HOME/.themes/$GTK_THEME/gtk-2.0/gtkrc" \
-        "$HOME/.themes/$OPENBOX_THEME/openbox-3/themerc"; do
-        sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$file"
-    done
 fi
 
-# Refresh theme
-xfconf-query -c xsettings -p /Net/ThemeName -r
+# Refresh
+xfconf-query -c xsettings -p /Net/ThemeName -s "Default"
+xfconf-query -c xsettings -p /Net/ThemeName -s "$GTK_THEME"
 "$HOME/.config/lilidog-themes/$GTK_THEME" > /dev/null 2>&1
