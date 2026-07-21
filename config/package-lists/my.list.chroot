@@ -187,7 +187,6 @@ python3-six
 python3-pycurl 
 python3-reportbug
 python3-xlib
-qbittorrent
 #qt5ct
 #qt5-gtk-platformtheme
 #qt6-gtk-platformtheme
@@ -220,6 +219,7 @@ thunar-media-tags-plugin
 thunar-volman
 tumbler
 traceroute
+transmission-gtk
 tree
 udev
 udisks2
