@@ -49,7 +49,7 @@ Color Picker,       yad --color --gtk-palette --palette=/usr/share/X11/rgb.txt, 
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
 Kernel Remover,     gksudo /usr/local/bin/kernel-remover,     applications-accessories
-Key Bindings,        x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-keyboard-shortcuts
+Key Bindings,       x-terminal-emulator -T 'Keybinds' -e bash -c "ld-keys",  preferences-desktop-keyboard-shortcuts
 Lilidog Installers, ld-installers,                    preferences-system-search
 Lucky Backup,       luckybackup,                      luckybackup
 QBittorrent,        qbittorrent,                      qbittorrent

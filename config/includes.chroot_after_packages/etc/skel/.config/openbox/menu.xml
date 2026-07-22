@@ -147,11 +147,6 @@
 					<execute>gnome-screenshot -i</execute>
 				</action>
 			</item>
-			<item icon="/usr/share/pixmaps/htop.png" label="Htop">
-				<action name="Execute">
-					<execute>urxvt -e htop</execute>
-				</action>
-			</item>
 			<item icon="/usr/share/icons/gnome/24x24/categories/applications-other.png" label="Gparted">
 				<action name="Execute">
 					<execute>gksudo gparted</execute>
