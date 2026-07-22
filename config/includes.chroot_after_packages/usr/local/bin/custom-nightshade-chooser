@@ -69,13 +69,12 @@ if [ "$RETVAL" -eq 2 ]; then
 
     APPLY_DONE=1
 
-"$HOME/.config/lilidog-themes/$GTK_THEME" > /dev/null 2>&1
+    xfconf-query -c xsettings -p /Net/ThemeName -s "Default"
+    xfconf-query -c xsettings -p /Net/ThemeName -s "$GTK_THEME"
+    xfconf-query -c xsettings -p /Net/IconThemeName -s "hicolor"
+    xfconf-query -c xsettings -p /Net/IconThemeName -s "$DEFAULT_ICON_THEME"
 
-xfconf-query -c xsettings -p /Net/ThemeName -s "Default"
-xfconf-query -c xsettings -p /Net/ThemeName -s "$GTK_THEME"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "hicolor"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "$DEFAULT_ICON_THEME"
-
+    "$HOME/.config/lilidog-themes/$GTK_THEME" > /dev/null 2>&1
     exit 0
 fi
 
