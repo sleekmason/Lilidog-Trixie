@@ -4,17 +4,14 @@
 
 set -e
 
-### Set your default highlight color
 DEFAULT_COLOR="#154c33"
 DEFAULT_ICON_THEME="Obsidian-Green"
 
-### Set your theme names
 GTK_THEME="Custom-ink"
 OPENBOX_THEME="Custom-inkbox"
 
 # Apply current theme
 "$HOME/.config/lilidog-themes/$GTK_THEME" > /dev/null 2>&1
-
 ORIGINAL_ICON_THEME=$(xfconf-query -c xsettings -p /Net/IconThemeName)
 APPLY_DONE=0
 
@@ -29,19 +26,17 @@ cleanup_icons() {
         "$HOME/.config/lilidog-themes/$GTK_THEME" > /dev/null 2>&1
     fi
 }
-
 trap cleanup_icons EXIT INT TERM
 
-# Ensure themes exist in ~/.themes
+# Ensure ~/.themes and copy theme
 mkdir -p "$HOME/.themes"
 for t in "$GTK_THEME" "$OPENBOX_THEME"; do
     [ ! -e "$HOME/.themes/$t" ] && cp -fr "/usr/share/themes/$t" "$HOME/.themes"
 done
-
-# Copy readme if it exists
+# Copy readme
 [ -e "/usr/share/lilidog/Readme.lilidog-themes" ] && \
     cp -f "/usr/share/lilidog/Readme.lilidog-themes" "$HOME/.themes/"
-
+    
 # Comment icon line during pick
 sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^#*/# /g' \
     "$HOME/.config/lilidog-themes/$GTK_THEME"
@@ -54,23 +49,35 @@ COLOR_CHOICE=$(yad --color --init-color="$DEFAULT_COLOR" \
     --field="Color" \
     --button=" Change Icon!org.xfce.settings.color:bash -c 'xfce4-appearance-settings & sleep 0.5; xdotool key Alt+i &'" \
     --button=" Cancel!gtk-delete":1 \
-    --button=" Apply!gtk-color-picker":0)
-
+    --button=" Apply / Reset!gtk-color-picker":0)
 RETVAL=$?
 if [ "$RETVAL" -ne 0 ]; then
     cleanup_icons
     exit 0
 fi
 
-# Capture current icon theme
 CURRENT_ICON_THEME=$(xfconf-query -c xsettings -p /Net/IconThemeName)
-
-if [[ "$CURRENT_ICON_THEME" == "$ORIGINAL_ICON_THEME" ]]; then
-    ICON_THEME_TO_SET="$DEFAULT_ICON_THEME"
+if [[ "$CURRENT_ICON_THEME" != "$ORIGINAL_ICON_THEME" ]]; then
+    ICON_CHANGED=1
 else
-    ICON_THEME_TO_SET="$CURRENT_ICON_THEME"
+    ICON_CHANGED=0
+fi
+if [[ "$COLOR_CHOICE" != "$DEFAULT_COLOR" ]]; then
+    COLOR_PICKED=1
+else
+    COLOR_PICKED=0
 fi
 
+if [[ "$ICON_CHANGED" -eq 1 ]]; then
+    # Icon changed through appearance dialog
+    ICON_THEME_TO_SET="$CURRENT_ICON_THEME"
+elif [[ "$COLOR_PICKED" -eq 1 ]]; then
+    # Only color changed
+    ICON_THEME_TO_SET="$ORIGINAL_ICON_THEME"
+else
+    # Nothing changed
+    ICON_THEME_TO_SET="$DEFAULT_ICON_THEME"
+fi
 sed -i \
   "s|^\(#\s*\)\?xfconf-query -c xsettings -p /Net/IconThemeName -s \".*\"|xfconf-query -c xsettings -p /Net/IconThemeName -s \"$ICON_THEME_TO_SET\"|" \
   "$HOME/.config/lilidog-themes/$GTK_THEME"
@@ -81,7 +88,9 @@ sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^#\s*//' \
 APPLY_DONE=1
 
 # Apply color
-if [[ -n "$COLOR_CHOICE" ]]; then
+if [[ "$ICON_CHANGED" -eq 1 && "$COLOR_PICKED" -eq 0 ]]; then
+    :
+elif [[ -n "$COLOR_CHOICE" ]]; then
     NEW_COLOR=$(echo "$COLOR_CHOICE" | sed 's|[#,]||g')
     if grep -q "#$NEW_COLOR" "$HOME/.themes/$GTK_THEME/gtk-3.0/gtk-contained.css"; then
         echo
@@ -104,4 +113,6 @@ fi
 # Refresh
 xfconf-query -c xsettings -p /Net/ThemeName -s "Default"
 xfconf-query -c xsettings -p /Net/ThemeName -s "$GTK_THEME"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "hicolor"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "$ICON_THEME_TO_SET"
 "$HOME/.config/lilidog-themes/$GTK_THEME" > /dev/null 2>&1
