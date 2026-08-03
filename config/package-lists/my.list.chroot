@@ -149,8 +149,8 @@ mesa-vulkan-drivers
 mesa-vdpau-drivers
 media-types
 nala
-mobile-broadband-provider-info
-modemmanager
+#mobile-broadband-provider-info
+#modemmanager
 mokutil
 mousepad
 mpv
@@ -227,7 +227,7 @@ unzip
 update-inetd
 usb-modeswitch
 usb.ids
-usbmuxd
+#usbmuxd
 usbutils
 usermode
 user-setup
