@@ -227,7 +227,7 @@ unzip
 update-inetd
 usb-modeswitch
 usb.ids
-#usbmuxd
+usbmuxd
 usbutils
 usermode
 user-setup
