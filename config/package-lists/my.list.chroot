@@ -212,7 +212,7 @@ systemd-resolved
 tasksel
 telnet
 tint2
-tlp
+#tlp
 thunar
 thunar-archive-plugin
 thunar-gtkhash
