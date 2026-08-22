@@ -18,7 +18,7 @@ lb config noauto \
      --firmware-chroot 'true' \
      --security 'true' \
      --memtest 'memtest86+' \
-     --image-name 'Lilidog-Trixie-26.08.09' \
+     --image-name 'Lilidog-Trixie-26.08.22' \
      --iso-application 'Lilidog-Trixie' \
      --iso-publisher 'Lilidog-Trixie GNU/Linux' \
      --iso-volume 'Lilidog-Trixie' \
