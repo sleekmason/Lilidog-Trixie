@@ -47,7 +47,7 @@ display-exit:			"   Exit options";
 }
 
 // This line changed for Auto Themes Changer.
-@theme "familiar-fane.rasi"
+@theme "familiar-dragon.rasi"
 
 // These are the available themes.
 //@theme "familiar-adobe.rasi"
