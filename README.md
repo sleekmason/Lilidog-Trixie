@@ -219,8 +219,5 @@ but maybe keep it simple for a run or two.
 
 Note * Change 'waydog-trixie' to whichever build you selected.
 
-#### Lilidog
-[![Lili.png](https://i.postimg.cc/hjy8qYS8/Lili.png)](https://postimg.cc/5YzQBnQj)
-
 Please post in the [Lilidog SourceForge Forum](https://sourceforge.net/projects/lilidog/) if you have any questions or issues.
 
