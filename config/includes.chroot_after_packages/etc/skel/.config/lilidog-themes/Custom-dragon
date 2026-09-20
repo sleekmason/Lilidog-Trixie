@@ -33,8 +33,8 @@ xfconf-query -c xfce4-terminal -p /color-foreground -s "#d9d9d9d9d7d7"
 xfconf-query -c xfce4-terminal -p /color-palette -s "rgb(4,4,4);rgb(214,69,69);rgb(25,209,118);rgb(232,196,88);rgb(53,154,204);rgb(199,80,179);rgb(0,173,173);rgb(212,212,212);rgb(158,165,171);rgb(255,99,99);rgb(27,224,126);rgb(255,224,102);rgb(84,164,204);rgb(245,122,225);rgb(96,219,210);rgb(224,224,224)"
 
 ## Change Rofi theme
-sed -i 's/^@theme "familiar.*/@theme "familiar-dragon.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi" >/dev/null 2>&1
-sed -i 's/^@theme "rounded.*/@theme "rounded-dragon.rasi"/g' "$HOME/.config/rofi/config.rasi" >/dev/null 2>&1
+sed -i 's/^@theme "familiar.*/@theme "familiar-custom-dragon.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi" >/dev/null 2>&1
+sed -i 's/^@theme "rounded.*/@theme "rounded-custom-dragon.rasi"/g' "$HOME/.config/rofi/config.rasi" >/dev/null 2>&1
 
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
